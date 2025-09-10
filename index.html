@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="hi">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -276,30 +276,47 @@
     function scrollGallery(id,dir){const el=document.getElementById(id);el.scrollBy({left:dir*300,behavior:"smooth"});}
     
     const loadingScreen = document.getElementById("loadingScreen");
-  const imgs = document.images;
-  let loadedCount = 0;
-  const totalCount = imgs.length;
 
-  function hideLoader() {
-    loadingScreen.style.opacity = "0";
-    setTimeout(() => loadingScreen.style.display = "none", 600);
-  }
-
-  function imageLoaded() {
-    loadedCount++;
-    if (loadedCount === totalCount) {
-      hideLoader();
+    function hideLoader() {
+      loadingScreen.style.opacity = "0";
+      setTimeout(() => loadingScreen.style.display = "none", 600);
     }
-  }
 
-  for (let i = 0; i < totalCount; i++) {
-    if (imgs[i].complete) {
-      imageLoaded();
-    } else {
-      imgs[i].addEventListener("load", imageLoaded);
-      imgs[i].addEventListener("error", imageLoaded);
+    function waitForImages() {
+      const imgs = document.images;
+      let loadedCount = 0;
+      const totalCount = imgs.length;
+
+      function imageLoaded() {
+        loadedCount++;
+        if (loadedCount === totalCount) {
+          hideLoader();
+        }
+      }
+
+      if (totalCount === 0) {
+        hideLoader();
+        return;
+      }
+
+      for (let i = 0; i < totalCount; i++) {
+        if (imgs[i].complete) {
+          imageLoaded();
+        } else {
+          imgs[i].addEventListener("load", imageLoaded);
+          imgs[i].addEventListener("error", imageLoaded);
+        }
+      }
     }
-  }
+
+    // Hide loader when all assets are loaded
+    window.addEventListener("load", hideLoader);
+
+    // Track images too
+    document.addEventListener("DOMContentLoaded", waitForImages);
+
+    // Fallback (10s max wait)
+    setTimeout(hideLoader, 10000);
   </script>
 </body>
 </html>
