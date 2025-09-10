@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Teachers' Day 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0f1724;
+      --accent-1:#FF6B6B;
+      --accent-2:#FFD93D;
+      --accent-3:#6BE7FF;
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:'Inter',sans-serif;background:linear-gradient(180deg,#071028 0%, #071b2a 100%);color:#fff;overflow-x:hidden;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:1200;display:flex;align-items:center;gap:12px;padding:10px 20px;background:rgba(7,16,40,0.8);backdrop-filter:blur(8px);}
+    .logo{display:flex;gap:12px;align-items:center;}
+    .logo .mark{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent-1),var(--accent-3));display:grid;place-items:center;font-weight:800;color:#072033;}
+    .logo h1{font-family:'Playfair Display';font-size:18px;}
+
+    /* Ribbons opposite directions */
+    .ribbon-container{position:relative;height:200px;margin-top:70px;overflow:hidden;}
+    .ribbon{display:flex;position:absolute;width:200%;}
+    .ribbon img{width:120px;height:80px;object-fit:cover;}
+    .ribbon.black{top:40px;transform:rotate(-6deg);animation:slideLeft 30s linear infinite;}
+    .ribbon.pink{top:100px;transform:rotate(6deg);animation:slideRight 30s linear infinite;}
+    @keyframes slideLeft{from{transform:translateX(0) rotate(-6deg);}to{transform:translateX(-50%) rotate(-6deg);}}
+    @keyframes slideRight{from{transform:translateX(-50%) rotate(6deg);}to{transform:translateX(0) rotate(6deg);}}
+
+    header.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 60px 5% 40px;
+  text-align: center;}
+@media(min-width:768px) {
+  header.hero {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;}}
+    .hero-left{max-width:700px}
+    .title{font-family:'Playfair Display';font-size:32px;line-height:1.3;margin:12px 0}
+    .title span{background:linear-gradient(90deg,var(--accent-2),var(--accent-1));-webkit-background-clip:text;color:transparent}
+    .lead{opacity:0.9;margin:16px 0;font-size:16px}
+    @media(min-width:768px){header.hero{flex-direction:row;text-align:left;justify-content:space-between;}.title{font-size:40px;}}
+
+    /* Heart collage */
+    .heart-collage{width:280px;height:260px;position:relative;margin:auto;display:flex;flex-wrap:wrap;
+      clip-path:path("M140 260 C50 170, 0 110, 70 50 C110 15, 140 50, 140 90 C140 50, 170 15, 210 50 C280 110, 230 170, 140 260 Z");
+      overflow:hidden;}
+    .heart-collage img{width:20%;height:20%;object-fit:cover;transition:transform .4s ease,opacity .4s ease;opacity:0;animation:fadeIn 1s forwards;}
+    .heart-collage img:hover{transform:scale(1.1);z-index:5;}
+    @keyframes fadeIn{to{opacity:1}}
+
+    /* Gallery with arrows */
+    .gallery-section{margin:60px 0;padding:0 20px;position:relative;}
+    .gallery-section h2{font-family:'Playfair Display';margin-bottom:16px;font-size:24px;color:var(--accent-3);}
+    .gallery-row{display:flex;overflow-x:auto;gap:10px;scroll-behavior:smooth;}
+    .gallery-row img{height:160px;border-radius:10px;cursor:pointer;flex-shrink:0;object-fit:cover;}
+    .gallery-arrow{display:none;position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,0.5);border:none;color:#fff;font-size:32px;padding:6px 10px;border-radius:6px;cursor:pointer;z-index:10;}
+    .gallery-arrow.left{left:0;}
+    .gallery-arrow.right{right:0;}
+    @media(min-width:768px){.gallery-arrow{display:block;}}
+    
+    .vlog{margin:60px 0;padding:0 20px;position:relative;}
+    .vlog h2{font-family:'Playfair Display';margin-bottom:16px;font-size:24px;color:var(--accent-3);}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;place-items:center;z-index:2000;}
+    .lightbox img{max-width:90%;max-height:85%;border-radius:12px;}
+    .lightbox button{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;font-size:48px;color:white;cursor:pointer;padding:10px;user-select:none;}
+    .lightbox .prev{left:20px}
+    .lightbox .next{right:20px}
+
+    /* Thank you */
+    .thanks{padding:60px 20px;text-align:center;background:linear-gradient(90deg,rgba(255,107,107,0.2),rgba(255,217,61,0.2));border-radius:12px;max-width:800px;margin:40px auto;}
+    .thanks h3{font-size:28px;margin-bottom:20px;color:var(--accent-2);}
+    .thanks p{font-size:18px;line-height:1.6;margin:10px 0;}
+
+    footer{text-align:center;padding:20px;opacity:0.8;}
+ 
+ /* Abstract Loader */
+  #loadingScreen {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #071028, #0f1724);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    z-index: 9999;
+    overflow: hidden;
+    transition: opacity 0.6s ease;
+  }
+
+  #loadingScreen h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    text-align: center;
+    background: linear-gradient(90deg, var(--accent-2), var(--accent-1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(255,255,255,0.2);
+    animation: pulseText 1.8s infinite;
+  }
+
+  #loadingScreen h2 span {
+    display: block;
+    font-size: 20px;
+    opacity: 0.8;
+  }
+
+  @keyframes pulseText {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.7; }
+  }
+
+  .shapes {
+    position: relative;
+    width: 200px;
+    height: 200px;
+  }
+
+  .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-3));
+    opacity: 0.6;
+    animation: floatShape 6s infinite ease-in-out alternate;
+  }
+
+  .shape:nth-child(1) {
+    width: 120px; height: 120px;
+    top: 0; left: 40px;
+    animation-delay: 0s;
+  }
+
+  .shape:nth-child(2) {
+    width: 80px; height: 80px;
+    bottom: 20px; right: 20px;
+    animation-delay: 1s;
+    background: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+  }
+
+  .shape:nth-child(3) {
+    width: 60px; height: 60px;
+    top: 20px; right: 10px;
+    animation-delay: 2s;
+    background: linear-gradient(135deg, var(--accent-3), var(--accent-2));
+  }
+
+  .shape:nth-child(4) {
+    width: 100px; height: 100px;
+    bottom: 40px; left: 0;
+    animation-delay: 3s;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  }
+
+  @keyframes floatShape {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-30px) scale(1.1); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  </style>
+</head>
+<body>
+  <!-- Abstract Loading Screen -->
+<div id="loadingScreen">
+  <div class="shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+  <h2>Loading... <span>Please wait</span></h2>
+</div>
+  <div class="nav">
+    <div class="logo"><div class="mark">T</div><h1>Teachers' Day 2025</h1></div>
+  </div>
+
+  <!-- Ribbons -->
+  <div class="ribbon-container">
+    <div class="ribbon black" id="ribbonBlack"></div>
+    <div class="ribbon pink" id="ribbonPink"></div>
+  </div>
+
+  <main>
+    <header class="hero">
+      <div class="hero-left">
+        <h2 class="title">Celebrating the <span>guidance & love</span> of our teachers</h2>
+        <p class="lead">A heart of memories, a gallery of gratitude. Click any photo to enlarge and relive the moments.</p>
+      </div>
+      <aside><div class="heart-collage" id="heartCollage"></div></aside>
+    </header>
+
+    <!-- Year galleries -->
+    <section class="gallery-section">
+      <h2>Teachers' Day 2025</h2>
+      <button class="gallery-arrow left" onclick="scrollGallery('gallery2025',-1)">&#10094;</button>
+      <div class="gallery-row" id="gallery2025"></div>
+      <button class="gallery-arrow right" onclick="scrollGallery('gallery2025',1)">&#10095;</button>
+    </section>
+    <section class="gallery-section">
+      <h2>Teachers' Day 2023–2024</h2>
+      <button class="gallery-arrow left" onclick="scrollGallery('galleryPrev',-1)">&#10094;</button>
+      <div class="gallery-row" id="galleryPrev"></div>
+      <button class="gallery-arrow right" onclick="scrollGallery('galleryPrev',1)">&#10095;</button>
+    </section>
+    
+    <section class="vlog">
+      <h2>Vlog 2023</h2>
+      <iframe
+        src="https://www.youtube.com/embed/D1pKkEyweTk" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen></iframe>
+    </section>
+
+    <!-- Thank you section -->
+    <section class="thanks">
+  <h3>Thank You, Teachers 🙏</h3>
+  <p>You have given us not just knowledge from books, but also the wisdom to live life well.</p>
+  <p>We are grateful for your hard work, patience, and guidance — without you, our journey would not have been the same.</p>
+
+  <h3 style="margin-top:40px;color:var(--accent-3);">Thank You, Fellow Students 🌟</h3>
+  <p>This celebration was a success because of the effort and enthusiasm of every one of us.</p>
+  <p>From photography, decoration, and presentations to helping in every small way — each contribution made this day truly special.</p>
+  <p>Today is not just a celebration of our teachers, but also of the teamwork, energy, and spirit we all share as students.</p>
+</section>
+  </main>
+
+  <footer>
+    <div>© 2025 — Doranda College</div>
+    <div>Made with ❤️ by Students & Teachers</div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <button class="prev" onclick="prevImage(event)">&#10094;</button>
+    <img id="lightboxImg" src="" alt="enlarged">
+    <button class="next" onclick="nextImage(event)">&#10095;</button>
+  </div>
+
+  <script>
+    const maxImages=60;
+    const heartCollage=document.getElementById("heartCollage");
+    const gallery2025=document.getElementById("gallery2025");
+    const galleryPrev=document.getElementById("galleryPrev");
+    const ribbonBlack=document.getElementById("ribbonBlack");
+    const ribbonPink=document.getElementById("ribbonPink");
+    let allImages=[];
+
+    function addImage(src){const img=document.createElement("img");img.src=src;img.alt="Teachers Day";img.loading="lazy";img.onclick=()=>openLightbox(src);allImages.push(src);return img;}
+
+    // Heart collage
+    for(let i=1;i<=maxImages;i++){const num=String(i).padStart(2,"0");const src=`images/${num}.jpg`;const img=addImage(src);img.style.animationDelay=(i*0.05)+"s";heartCollage.appendChild(img);}
+    // Galleries
+    for(let i=1;i<=maxImages;i++){const num=String(i).padStart(2,"0");gallery2025.appendChild(addImage(`images/${num}.jpg`));}
+    for(let i=1;i<=maxImages;i++){const num=String(i).padStart(2,"0");galleryPrev.appendChild(addImage(`previous-images/${num}.jpg`));}
+    // Ribbons (20 imgs each)
+    for(let i=1;i<=20;i++){const n=String(i).padStart(2,"0");ribbonBlack.appendChild(addImage(`images/${n}.jpg`).cloneNode());ribbonPink.appendChild(addImage(`previous-images/${n}.jpg`).cloneNode());}
+
+    // Lightbox
+    let currentSrc="";
+    function openLightbox(src){currentSrc=src;document.getElementById("lightboxImg").src=src;document.getElementById("lightbox").style.display="grid";document.body.style.overflow="hidden";}
+    function closeLightbox(e){if(e.target.id==="lightbox"||e.target.id==="lightboxImg"){document.getElementById("lightbox").style.display="none";document.body.style.overflow="";}}
+    function prevImage(e){e.stopPropagation();let idx=allImages.indexOf(currentSrc);idx=(idx-1+allImages.length)%allImages.length;currentSrc=allImages[idx];document.getElementById("lightboxImg").src=currentSrc;}
+    function nextImage(e){e.stopPropagation();let idx=allImages.indexOf(currentSrc);idx=(idx+1)%allImages.length;currentSrc=allImages[idx];document.getElementById("lightboxImg").src=currentSrc;}
+    document.addEventListener('keydown',(e)=>{if(e.key==="Escape")closeLightbox({target:{id:"lightbox"}});if(e.key==="ArrowLeft")prevImage(e);if(e.key==="ArrowRight")nextImage(e);});
+
+    // Gallery scroll with arrows
+    function scrollGallery(id,dir){const el=document.getElementById(id);el.scrollBy({left:dir*300,behavior:"smooth"});}
+    
+    const loadingScreen = document.getElementById("loadingScreen");
+  const imgs = document.images;
+  let loadedCount = 0;
+  const totalCount = imgs.length;
+
+  function hideLoader() {
+    loadingScreen.style.opacity = "0";
+    setTimeout(() => loadingScreen.style.display = "none", 600);
+  }
+
+  function imageLoaded() {
+    loadedCount++;
+    if (loadedCount === totalCount) {
+      hideLoader();
+    }
+  }
+
+  for (let i = 0; i < totalCount; i++) {
+    if (imgs[i].complete) {
+      imageLoaded();
+    } else {
+      imgs[i].addEventListener("load", imageLoaded);
+      imgs[i].addEventListener("error", imageLoaded);
+    }
+  }
+  </script>
+</body>
+</html>
